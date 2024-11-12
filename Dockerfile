@@ -46,8 +46,14 @@ RUN ["apt", "install", "vim", "-y"]
 RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 COPY ./vimrc /root/.vimrc
 
+# Oh-my-zsh
+RUN /usr/bin/zsh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN ["mv", "/root/.zshrc.pre-oh-my-zsh", "/root/.zshrc"]
+RUN /usr/bin/zsh -c "echo 'plugins=(zsh-autosuggestions zsh-completions zsh-syntax-highlighting)' >> /root/.zshrc"
+RUN /usr/bin/zsh -c "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/powerlevel10k"
+RUN /usr/bin/zsh -c "echo 'source /root/powerlevel10k/powerlevel10k.zsh-theme' >> /root/.zshrc"
+
 # User
 RUN usermod -s /usr/bin/zsh root
 USER root:root
 WORKDIR /
-
