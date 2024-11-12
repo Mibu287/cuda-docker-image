@@ -47,7 +47,7 @@ RUN curl -fLo /root/.vim/autoload/plug.vim --create-dirs https://raw.githubuserc
 COPY ./vimrc /root/.vimrc
 
 # User
-SHELL ["/usr/bin/zsh"]
+RUN usermod -s /usr/bin/zsh root
 USER root:root
 WORKDIR /
 
