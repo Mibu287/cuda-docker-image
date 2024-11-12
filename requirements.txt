@@ -1,0 +1,7 @@
+ipython
+jupyter
+scikit-learn
+pandas
+polars
+duckdb
+requests
