@@ -1,7 +1,8 @@
 FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04
 
 # Install Cuda toolkit
-apt install cuda-toolkit-12-8 -y
+RUN ["bash", "-c", "apt update && apt upgrade -y"]
+RUN ["bash", "-c", "apt install cuda-toolkit-12-8 -y"]
 
 # Install ZSH and other tools
 RUN ["bash", "-c", "apt update && apt upgrade -y"]
