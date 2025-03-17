@@ -11,7 +11,7 @@ RUN ["/bin/sh", "-c", "echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-
 RUN ["/bin/sh", "-c", "wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null"]
 RUN ["apt", "update"]
 RUN ["apt", "install", "-y", "kitware-archive-keyring"]
-RUN ["apt", "install", "-y", "cmake"]
+RUN ["apt", "install", "-y", "cmake=3.31.6-0kitware1ubuntu22.04.1", "cmake-curses-gui=3.31.6-0kitware1ubuntu22.04.1"]
 
 # Install LLVM
 RUN ["wget", "-O", "/tmp/llvm.sh", "https://apt.llvm.org/llvm.sh"]
