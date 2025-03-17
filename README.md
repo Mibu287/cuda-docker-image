@@ -1,0 +1,1 @@
+[![Build and push image to Docker registry](https://github.com/Mibu287/cuda-docker-image/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Mibu287/cuda-docker-image/actions/workflows/docker-image.yml)
