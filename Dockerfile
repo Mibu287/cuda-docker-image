@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.6.2-cudnn-devel-ubuntu22.04 
+FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04
 
 # Install ZSH and other tools
 RUN ["bash", "-c", "apt update && apt upgrade -y"]
