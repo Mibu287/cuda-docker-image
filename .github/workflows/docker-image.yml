@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, ubuntu-24.04-arm]
+        os: [ubuntu-24.04, ubuntu-24.04-arm]
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
@@ -27,5 +27,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: buiducminh287/devbox:12.8.1-cudnn-devel-ubuntu22.04
+          tags: buiducminh287/devbox:12.8.1-cudnn-devel-${{ matrix.os }}
           labels: devbox
