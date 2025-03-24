@@ -20,7 +20,7 @@ RUN ["apt", "install", "-y", "cmake=3.31.6-0kitware1ubuntu22.04.1", "cmake-curse
 # Install LLVM
 RUN ["wget", "-O", "/tmp/llvm.sh", "https://apt.llvm.org/llvm.sh"]
 RUN ["/bin/bash", "/tmp/llvm.sh", "18", "all"]
-RUN echo "export PATH=/usr/lib/llvm-17/bin:\$PATH" >> /root/.zshrc
+RUN echo "export PATH=/usr/lib/llvm-18/bin:\$PATH" >> /root/.zshrc
 
 # Install Pyenv
 RUN ["wget", "-O", "/tmp/pyenv.sh", "https://pyenv.run"]
